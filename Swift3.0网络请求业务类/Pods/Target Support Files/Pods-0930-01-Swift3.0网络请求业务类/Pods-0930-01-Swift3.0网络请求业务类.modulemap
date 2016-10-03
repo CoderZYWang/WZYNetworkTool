@@ -1,0 +1,6 @@
+framework module Pods_0930_01_Swift3_0_______ {
+  umbrella header "Pods-0930-01-Swift3.0网络请求业务类-umbrella.h"
+
+  export *
+  module * { export * }
+}
