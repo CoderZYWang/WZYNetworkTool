@@ -17,7 +17,11 @@ enum WZYRequestType {
 
 class WZYNetworkTool: AFHTTPSessionManager {
     
-    static let shareInstance = WZYNetworkTool()
+    static let shareInstance : WZYNetworkTool = {
+        let toolInstance = WZYNetworkTool()
+        toolInstance.responseSerializer.acceptableContentTypes?.insert("text/html")
+        return toolInstance
+    }()
 
     // 将成功和失败的回调写在一个逃逸闭包中
     func request(requestType : WZYRequestType, url : String, parameters : [String : Any], resultBlock : @escaping([String : Any]?, Error?) -> ()) {
